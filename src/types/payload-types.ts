@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface Property {
   id: string;
   title: string;
@@ -6,9 +7,6 @@ export interface Property {
   price: number;
   image: Media;
   description?: any;
-  bedrooms?: number;
-  bathrooms?: number;
-  area?: number;
   features?: { feature: string }[];
   isPublished: boolean;
   createdAt: string;
