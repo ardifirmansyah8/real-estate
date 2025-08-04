@@ -92,26 +92,11 @@ export default function PropertyCard({
         </div>
 
         <p className="text-gray-600 text-sm line-clamp-3">
-          {property.description?.length > 0
-            ? property.description[0]?.children?.[0]?.text ||
+          {property?.description?.root.children.length > 0
+            ? property.description?.root.children[0]?.children?.[0]?.text ||
               "No description available"
             : "No description available"}
         </p>
-
-        {(property.bedrooms || property.bathrooms) && (
-          <div className="flex items-center space-x-4 mt-4 text-sm text-gray-600">
-            {property.bedrooms && (
-              <span>
-                {property.bedrooms} bed{property.bedrooms > 1 ? "s" : ""}
-              </span>
-            )}
-            {property.bathrooms && (
-              <span>
-                {property.bathrooms} bath{property.bathrooms > 1 ? "s" : ""}
-              </span>
-            )}
-          </div>
-        )}
       </div>
     </div>
   );
